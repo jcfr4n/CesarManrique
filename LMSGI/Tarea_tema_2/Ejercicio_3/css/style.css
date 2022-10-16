@@ -1,0 +1,18 @@
+form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 1rem auto;
+    width: 70%;
+}
+h1 {
+    text-align: center;
+    width: 70%;
+    margin: 1rem auto;
+}
+fieldset {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 1rem;
+}

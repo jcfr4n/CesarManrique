@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <meta name="description" content="Formulario de registro para un hotel">
+    <meta name="author" content="Juan Carlos Francisco (jcfm73@gmail.com)">
+    <meta name="keywords" content="formulario, registro">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <h1 id="titulo">Formulario de registro</h1>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>Datos personales</legend>
+            <label for="name">Nombre: </label>
+            <input type="text" name="name" id="name">
+            <label for="lastname1">Primer apellido: </label>
+            <input type="text" name="lastname1" id="lastname1">
+            <label for="lastname2">Segundo apellido: </label>
+            <input type="text" name="lastname2" id="lastname2">
+            <br><br>
+            <label for="phone">Teléfono: </label>
+            <input type="tel" name="phone" id="phone">
+            <label for="email">Email: </label>
+            <input type="email" name="email" id="email">
+            <label for="lastname2">Segundo apellido: </label>
+            <input type="text" name="lastname2" id="lastname2">
+            <br><br>
+            <label for="numCoches">Número de coches</label>
+            <input type="number" name="numCoches" id="numCoches" min="0">
+        </fieldset>
+        <br><br>
+        <fieldset>
+            <legend>Check-In / Check-Out</legend>
+            <input type="date" name="chkin_date" id="chkin_date">
+        </fieldset>
+    </form>
+    
+</body>
+</html>
