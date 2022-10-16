@@ -43,7 +43,7 @@ article, .hero {
 
     height: 80vh;
 }
-.hero p {
+.hero h1 {
     font-size: 5rem;
     font-weight: 600;
     text-shadow: 5px 5px 10px white;
@@ -68,7 +68,7 @@ img {
 .card h4 {
     color: aquamarine;
 }
-h2>p {
+article h2 {
     font-size: 2rem;
     font-weight: 600;
     text-decoration: underline;
