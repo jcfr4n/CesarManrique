@@ -1,0 +1,129 @@
+body {
+    background-color: black;
+    color: white;
+}
+section {
+    width: 80%;
+    margin: 0 auto;
+}
+nav {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid white;
+    height: fit-content;
+    width: 80%;
+    margin: 0 auto;
+}
+.encabezado-izq {
+    width: 30%;
+}
+.encabezado-der {
+    text-align: center;
+    width: 70%;
+}
+.enlaces {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    width: 100%;
+
+}
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image:url("../img/laptop.jpg");
+    width: 100%;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+}
+article, .hero {
+
+    height: 80vh;
+}
+.hero p {
+    font-size: 5rem;
+    font-weight: 600;
+    text-shadow: 5px 5px 10px white;
+    text-align: center;
+}
+.separador {
+    height: 5rem;
+}
+#sobre_mi, #mis_estudios, #mi_experiencia {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+img {
+    width: 100%;
+    max-width: 640px;
+}
+.item span {
+    padding: 2px;
+    background-color: #555;
+}
+.card h4 {
+    color: aquamarine;
+}
+h2>p {
+    font-size: 2rem;
+    font-weight: 600;
+    text-decoration: underline;
+}
+footer {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid white;
+    height: fit-content;
+}
+.footer-izq {
+    width: 30%;
+}
+.footer-der {
+    text-align: center;
+    width: 70%;
+}
+/* CSS para el boton de ir arriba */
+.to-top{
+    /* background:#222; */
+	text-align:center;
+	font-size:180%;
+	margin:2em;
+	font-family: Calibri, arial, sans-serif;
+
+
+	color:white;
+	padding-top:1.8em;
+	display:block;/* or inline-block */
+	position:relative;
+	border-color:white;
+	text-decoration:none;
+	transition:all .3s ease-out;
+}
+.to-top:before{
+	content:'▲';
+	font-size:.9em;
+	position:absolute;
+	top:0;
+	left:50%;
+	margin-left:-.7em;
+	border:solid .13em white;
+	border-radius:10em;
+	width:1.4em;
+	height:1.4em;
+	line-height:1.3em;
+	border-color:inherit;
+	transition:transform .5s ease-in;
+}
+.to-top:hover{
+	color:pink;
+	border-color:pink;
+}
+.to-top:hover:before{
+	transform: rotate(360deg);
+}

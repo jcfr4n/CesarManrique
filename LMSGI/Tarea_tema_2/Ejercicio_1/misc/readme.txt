@@ -1,3 +1,6 @@
+Este será la receta para ser fijada como contenido de la web.
+
+
 Ingredientes:
 
 1 Kg. de cebollas.
