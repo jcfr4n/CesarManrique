@@ -14,7 +14,7 @@
 <body>
     <h1 id="titulo">Formulario de registro</h1>
     <form action="#" method="post">
-        <fieldset>
+        <fieldset id="dPersonales">
             <legend>Datos personales</legend>
             <label for="name">Nombre: </label>
             <input type="text" name="name" id="name">
@@ -34,10 +34,22 @@
             <input type="number" name="numCoches" id="numCoches" min="0">
         </fieldset>
         <br><br>
-        <fieldset>
-            <legend>Check-In / Check-Out</legend>
-            <input type="date" name="chkin_date" id="chkin_date">
-        </fieldset>
+        <div class="row">
+            <fieldset id="check">
+                <legend>Check-In / Check-Out</legend>
+                <input type="date" name="chkin_date" id="chkin_date">
+                <input type="date" name="chkout_date" id="chkout_date">
+            </fieldset>
+            <fieldset id="habitacion">
+                <legend>Tipo de Habitación</legend>
+                <label for="simple">Simple </label>
+                <input type="radio" name="habitacion" id="simple" value="simple">
+                <label for="doble">Doble </label>
+                <input type="radio" name="habitacion" id="doble" value="doble">
+                <label for="matrimonial">Matrimonial </label>
+                <input type="radio" name="habitacion" id="matrimonial" value="matrimonial">
+            </fieldset>
+        </div>
     </form>
     
 </body>

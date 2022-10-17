@@ -1,6 +1,5 @@
 form {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     margin: 1rem auto;
     width: 70%;
@@ -12,7 +11,15 @@ h1 {
 }
 fieldset {
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 1rem;
+    justify-content: space-between;
+    margin: 1rem auto;
+}
+#check input {
+    width: 40%;
+}
+.row fieldset {
+    display: inline-flex;
+    flex-direction: row;
+    width: 45%;
+    height: 2rem;
 }
