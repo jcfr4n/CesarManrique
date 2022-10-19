@@ -1,25 +1,43 @@
+body{
+    background-color: black;
+}
 form {
+    background-color: lightyellow;
     display: flex;
     flex-direction: column;
     margin: 1rem auto;
     width: 70%;
 }
 h1 {
+    color: white;
     text-align: center;
     width: 70%;
     margin: 1rem auto;
 }
 fieldset {
+    background-color: lightblue;
     flex-direction: row;
     justify-content: space-between;
     margin: 1rem auto;
 }
 #check input {
-    width: 40%;
-}
-.row fieldset {
-    display: inline-flex;
-    flex-direction: row;
     width: 45%;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem auto;
+    width: 70%;
+}
+button {
+    padding: 5px;
+    display: inline;
+    width: 50%;
     height: 2rem;
+}
+#send {
+    background-color: rgba(0, 255, 0, .5);
+}
+#reset {
+    background-color: rgba(255, 0, 0, .5);
 }
