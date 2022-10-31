@@ -1,0 +1,29 @@
+<!-- ELEMENTOS-->
+
+<!-- Se define torneo como elemento raiz y contendrá 1 o más participantes -->
+<!ELEMENT torneo (participante+)>
+
+<!-- Se define el elemento participante el cual cotendrá, una vez y de manera
+obligatoria, a los elementos nombre, edad y país; y de manera opcional podrá
+contener, una vez o ninguna, el elemento cabezaDeSerie-->
+<!ELEMENT participante (nombre,  edad, pais, cabezaDeSerie?)>
+
+<!-- Se definen los  elementos simples nombre, edad y país, los cuales contendrán
+ información, y el elemento cabezaDeSerie, el cual es un elemento vacio-->
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT edad (#PCDATA)>
+<!ELEMENT pais (#PCDATA)>
+<!ELEMENT cabezaDeSerie EMPTY>
+
+<!-- ATRIBUTOS -->
+
+<!--Se definen los atributos edición y anteriorGanador para el elemento torneo,
+ ambos atributos contienen información y son requeridos obligatoriamente-->
+<!ATTLIST torneo edicion CDATA #REQUIRED>
+<!ATTLIST torneo anteriorGanador CDATA #REQUIRED>
+
+<!--Se definen los atributos idP y pareja para el elemento participante, siendo el 
+atributo idP el identificador del participante y el atributo pareja hace referencia
+al identificador de otro participante que además está en el torneo-->
+<!ATTLIST participante idP ID #REQUIRED>
+<!ATTLIST participante pareja IDREF #REQUIRED>

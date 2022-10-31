@@ -1,0 +1,11 @@
+<!ELEMENT impresoras (impresora+)>
+<!ELEMENT impresora (marca, modelo, peso, tamaño+, cartucho, enred?)>
+<!ELEMENT marca (#PCDATA)>
+<!ELEMENT modelo (#PCDATA)>
+<!ELEMENT peso (#PCDATA)>
+<!ELEMENT tamaño (#PCDATA)>
+<!ELEMENT cartucho (#PCDATA)>
+<!ELEMENT enred EMPTY>
+<!ATTLIST impresora numSerie ID #REQUIRED>
+<!ATTLIST impresora tipo (matricial|láser|tinta) #REQUIRED>
+<!ATTLIST impresora compra CDATA #IMPLIED>

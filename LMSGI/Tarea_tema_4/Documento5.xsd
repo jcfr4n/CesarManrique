@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="torneo">
+    <xs:complexType>
+      <xs:sequence maxOccurs="unbounded">
+        <xs:element ref="participante"/>
+      </xs:sequence>
+      <xs:attribute name="edicion" type="xs:string" use="required"/>
+      <xs:attribute name="anteriorGanador" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="participante">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="nombre"/>
+        <xs:element ref="edad"/>
+        <xs:element ref="pais"/>
+        <xs:sequence minOccurs="0">
+          <xs:element ref="cabezaDeSerie"/>
+        </xs:sequence>
+      </xs:sequence>
+      <xs:attribute name="idP" type="xs:ID" use="required"/>
+      <xs:attribute name="pareja" type="xs:IDREF" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="nombre" type="xs:string"/>
+
+  <xs:element name="edad" type="xs:string"/>
+
+  <xs:element name="pais" type="xs:string"/>
+
+  <xs:element name="cabezaDeSerie" type="xs:string"/>
+
+</xs:schema>

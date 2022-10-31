@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<!-- Definimos el  elementoraiz  impresoras como un elemento complejo quien contiene además el elemento
+impresora que debe aparecer como mínimo una vez-->
+
+  <xs:element name="impresoras">
+    <xs:complexType>
+      <xs:sequence maxOccurs="unbounded">
+        <xs:element ref="impresora"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+<!--Aquí definimos el elemento impresora como elemento complejo quien tiene los atributos
+numSerie, tipo y compra y además referencia a los elementos marca, modelo, peso, tamaño, cartucho y enred-->
+  
+  <xs:element name="impresora">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="marca"/>
+        <xs:element ref="modelo"/>
+        <xs:element ref="peso"/>
+        
+        <!--  Este elemento es simple pero puede ocurrir  varias veces dentro de su elemento padre, por lo que 
+        se referencia desde adentro de una sequencia-->
+        <xs:sequence maxOccurs="unbounded">
+          <xs:element ref="tamaño"/>
+        </xs:sequence>
+        
+        <xs:element ref="cartucho"/>
+        
+        <!--  Este elemento es simple pero puede ocurrir  varias veces dentro de su elemento padre, por lo que 
+        se referencia desde adentro de una sequencia-->        
+        
+        <xs:sequence minOccurs="0">
+          <xs:element ref="enred"/>
+        </xs:sequence>
+        
+      </xs:sequence>
+      
+      <!-- Aquí pasamos a definir los atributos-->
+      
+      <xs:attribute name="numSerie" type="xs:ID" use="required"/>
+      
+      <!-- Estos atributos del elemento impresora contienen restricciones-->
+      
+      <xs:attribute name="tipo" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="matricial"/>
+            <xs:enumeration value="láser"/>
+            <xs:enumeration value="tinta"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="compra" >
+      <xs:simpleType>
+        <xs:restriction base="xs:integer">
+          <xs:minInclusive value="0"/>
+        </xs:restriction>
+      </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  
+<!--Estos dos elemento que siguen a  continuación, son elementos simples que contienen distintos tipos de 
+restricciones-->
+  
+  <xs:element name="peso">
+    <xs:simpleType>
+      <xs:restriction base="xs:decimal">
+        <xs:minInclusive value="0"/>
+        <xs:fractionDigits value="2"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  
+  <xs:element name="cartucho">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:pattern value="[C]-[0-9]{3}[A-Z]{1,2}"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+ 
+<!--Por último definimos los elementos simples que quedan -->
+   
+  <xs:element name="marca" type="xs:string"/>
+  
+  <xs:element name="modelo" type="xs:string"/>
+  
+  <xs:element name="tamaño" type="xs:string"/>
+
+  <xs:element name="enred" type="xs:string"/>
+  
+  <!--Etiqueta de cierre-->
+
+</xs:schema>
