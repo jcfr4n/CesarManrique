@@ -1,4 +1,4 @@
-package Actividad_3_13;
+package Actividad_3_13_variante;
 
 import java.util.Scanner;
 /**
@@ -13,11 +13,11 @@ Por ejemplo, si las 13:59:51 se incrementan en 10 segundos,
 resultan las 14:00:01.*/
     
     public static void main(String[] args) {
-        int hora, minutos, segundos, incremento, auxMin, auxHoras, auxDias;
-        auxMin = auxHoras = auxDias = 0;
+        int hora, minutos, segundos, incremento;
+        String salir = "n";
         Scanner sc = new Scanner(System.in);
 
-
+        do {
             System.out.println("Vamos a calcular el incremento de unos "
                     + "segundos");
             System.out.print("Ingrese la hora(0-23): ");
@@ -32,34 +32,23 @@ resultan las 14:00:01.*/
             System.out.println(hora + ":" + minutos +":" + segundos);
             System.out.println("El incremento indicado fue de:");
             System.out.println(incremento + " segundos");
-            
-            for (int i = 0; i<incremento; i++){
-                segundos++;  
-                if (segundos>59){
-                    segundos = 0;
-                    auxMin++;
+            segundos += incremento; // Sumamos el incremento y calculamos
+            if (segundos > 59) {
+                minutos += segundos/60;
+                segundos = segundos%60;
+                if (minutos > 59) {
+                    hora += minutos/60;
+                    minutos = minutos%60;
                 }
             }
-            for (int i = 0; i<auxMin;i++){
-                minutos++;
-                if (minutos>59){
-                    minutos = 0;
-                    auxHoras++;
-                }
-            }
-            for (int i = 0; i<auxHoras;i++){
-                hora++;
-                if (hora>23){
-                    hora = 0;
-                    auxDias++;
-                }
-            }
-            
             System.out.println("El resultado es:");
             System.out.println(hora + ":" + minutos +":" + segundos);
-            if (auxDias>0) System.out.println("de " + auxDias + 
-                    " días después.");
+            System.out.print("Desea parar la ejecución del programa(s/n): ");
+            salir = sc.next();
             sc.close();
+            System.out.println("\n\n\n");
+            
+        } while("n".equals(salir));
 
     }
 
