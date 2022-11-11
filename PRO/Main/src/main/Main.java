@@ -1,9 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package main;
-import java.util.*;
+import java.util.Scanner;
 
 /**
  *
@@ -11,27 +7,31 @@ import java.util.*;
  */
 public class Main {
 
-   public static void main(String[] args) {
-      Scanner sc = new Scanner(System.in);
-
-      System.out.println("Vamos a calcular fibonacci(n)");
-      System.out.print("Introduzca n (se recomienda n<40): ");
-      int num = sc.nextInt();
-
-      int resultado = fibo(num); 
-      System.out.println("\nfibonacci(" + num + ") = " + resultado);
-   }
-
-   static int fibo(int num) {
-      int res;
-
-      if (num == 0 || num == 1) { 
-         res = 1;
-      } else {
-         res = fibo(num - 1) + fibo(num - 2); 
-
-      }
-
-      return (res);
-   }
+    /*  Realiza un programa que convierta un número decimal en su representación 
+        binaria. Hay que tener en cuenta que desconocemos cuántas cifras tiene 
+        el número que introduce el usuario. Por simplicidad, iremos mostrando el 
+        número binario con un dígito por línea.*/
+    
+    public static void main(String[] args) {
+        int numero, numToBinary;
+        String result = "";
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Por favor, introduzca un número entero decimal el "
+                + "cual será convertido a sistema binario: ");
+        numToBinary = numero = sc.nextInt();
+        
+        do {
+            result = Integer.toString(numero % 2) + result;
+            numero /= 2;
+                    
+        }while(numero>=2);
+        
+        if(numero % 2 == 1) result = "1" + result;
+        
+        System.out.println("\n" + numToBinary + " expresado en base diez es: " + 
+                result + " expresado en binario.");
+        
+        sc.close();        
+    }
 }
