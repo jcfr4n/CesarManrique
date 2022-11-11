@@ -11,31 +11,27 @@ import java.util.*;
  */
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
+   public static void main(String[] args) {
       Scanner sc = new Scanner(System.in);
-      sc.useLocale(Locale.US);
 
-      System.out.print("Introduzca base (real): ");
-      double base = sc.nextDouble();
-      System.out.print("Introduzca el exponente: ");
-      int exp = sc.nextInt();
+      System.out.println("Vamos a calcular fibonacci(n)");
+      System.out.print("Introduzca n (se recomienda n<40): ");
+      int num = sc.nextInt();
 
-      System.out.println("El resultado es: " + aElevadoN(base, exp));
+      int resultado = fibo(num); 
+      System.out.println("\nfibonacci(" + num + ") = " + resultado);
    }
 
-   static double aElevadoN(double a, int n) {
-      double res;
+   static int fibo(int num) {
+      int res;
 
-      if (n == 0) { 
-         res = 1; 
+      if (num == 0 || num == 1) { 
+         res = 1;
       } else {
-         res = a * aElevadoN(a, n - 1); 
+         res = fibo(num - 1) + fibo(num - 2); 
+
       }
 
       return (res);
    }
-    
 }
