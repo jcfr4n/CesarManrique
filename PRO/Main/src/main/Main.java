@@ -1,37 +1,43 @@
 package main;
+
 import java.util.Scanner;
 
 /**
- *
  * @author juancfm
  */
 public class Main {
-
-    /*  Realiza un programa que convierta un número decimal en su representación 
-        binaria. Hay que tener en cuenta que desconocemos cuántas cifras tiene 
-        el número que introduce el usuario. Por simplicidad, iremos mostrando el 
-        número binario con un dígito por línea.*/
     
+    /**
+     * Para dos números dados, a y b, es posible buscar el máximo común divisor 
+     * (el número más grande que divide a ambos) mediante un algoritmo 
+     * ineficiente pero sencillo: desde el menor de a y b, ir buscando, de 
+     * forma decreciente, el primer número que divide a ambos simultáneamente. 
+     * Realiza un programa que calcule el máximo común divisor de dos números.
+     */
+
     public static void main(String[] args) {
-        int numero, numToBinary;
-        String result = "";
-        Scanner sc = new Scanner(System.in);
         
-        System.out.print("Por favor, introduzca un número entero decimal el "
-                + "cual será convertido a sistema binario: ");
-        numToBinary = numero = sc.nextInt();
+        int a, b, divisor;
+        Scanner sc=new Scanner(System.in);
         
-        do {
-            result = Integer.toString(numero % 2) + result;
-            numero /= 2;
-                    
-        }while(numero>=2);
+        System.out.println("Vamos a buscar el máximo común "
+                + "divisor de dos números dados.");
+        System.out.print("Introduzca el número A: ");
+        a=sc.nextInt();
+        System.out.print("Introduzca el número B: ");
+        b=sc.nextInt();
         
-        if(numero % 2 == 1) result = "1" + result;
+        divisor = (a<b)? a : b;
         
-        System.out.println("\n" + numToBinary + " expresado en base diez es: " + 
-                result + " expresado en binario.");
+        while(a%divisor!=0 || b%divisor!=0){
+            divisor--;
+        }
         
-        sc.close();        
+        System.out.println("El máximo común divisor de " + a +
+                " y " + b + " es: " + divisor);
+        
+        sc.close();
+        System.out.println("Fin.");        
     }
+
 }
