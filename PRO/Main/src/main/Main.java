@@ -12,52 +12,58 @@ import java.util.Scanner;
  */
 public class Main {
 
+    /**
+     * 4.16. Implementa la función divisoresPrimos( ) que muestra, por consola,
+     * todos los divisores primos del número que se le pasa como parámetro.
+     *
+     */
     public static void main(String[] args) {
-        double radio;
-        String option = "";
+        int n;
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Por favor indique el radio de la figura a evaluar: ");
-        radio = sc.nextDouble();
-        System.out.println("Ahora seleccione una opcion para: ");
-        System.out.println("1  Calcular la superficie o área.");
-        System.out.println("2  Calcular el volumen de la esfera.");
-        System.out.println("3  Calcular ambos.\n");
-        System.out.print("Opción: ");
-        option = sc.next("[123]");
-        System.out.println("\n");
-        switch (option) {
-            case "1" ->
-                superficie(radio);
-            case "2" ->
-                volumen(radio);
-            case "3" -> {
-                superficie(radio);
-                volumen(radio);
+        System.out.println("Vamos a mostrar todos los números primos que "
+                + "dividen a un número dado");
+        System.out.print("\nIndique el número a analizar: ");
+        n = sc.nextInt();
+
+        divisoresPrimos(n);
+    }
+
+    /**
+     * Presenta por consola los números primos divisores de un número
+     *
+     * @param n Número a analizar
+     */
+    private static void divisoresPrimos(int n) {
+        if (esPrimo(n)) {
+            System.out.println(n + " es un número primo");
+        } else {
+            System.out.println("Los divisores primos de " + n + " son:");
+            for (int i = 2, aux = n; aux >= 2; aux--) {
+                if (esPrimo(aux) && n % aux == 0) {
+                    System.out.println(aux);
+                }
             }
 
         }
-
     }
 
     /**
-     * Calcula la superficie de la circunferencia a partir de su radio
+     * Identifica cuando un número es primo
      *
-     * @param radio radio de la circunferencia
+     * @param n número sujeto a análisis
+     * @return Boolean true si es primo
      */
-    static void superficie(double radio) {
-        System.out.println("El área de la circunferencia es: "
-                + (4 * Math.PI * Math.pow(radio, 2)));
-    }
-
-    /**
-     * Calcula el volumen de una esfera a partir de su radio
-     *
-     * @param radio radio de la esfera
-     */
-    static void volumen(double radio) {
-        System.out.println("El volumen de la esfera es: "
-                + ((4 * Math.PI) / 3 * Math.pow(radio, 3)));
+    private static boolean esPrimo(int n) {
+        boolean flag = true;
+        int i = 2;
+        while (i <= (int) Math.sqrt(n) && flag == true) {
+            if (n % i == 0) {
+                flag = false;
+            }
+            i++;
+        }
+        return flag;
     }
 
 }
