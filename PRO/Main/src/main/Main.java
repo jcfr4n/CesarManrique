@@ -5,6 +5,7 @@
 package main;
 
 import java.util.Scanner;
+import java.util.Arrays;
 
 /**
  *
@@ -13,57 +14,27 @@ import java.util.Scanner;
 public class Main {
 
     /**
-     * 4.16. Implementa la función divisoresPrimos( ) que muestra, por consola,
-     * todos los divisores primos del número que se le pasa como parámetro.
      *
      */
     public static void main(String[] args) {
-        int n;
-        Scanner sc = new Scanner(System.in);
 
-        System.out.println("Vamos a mostrar todos los números primos que "
-                + "dividen a un número dado");
-        System.out.print("\nIndique el número a analizar: ");
-        n = sc.nextInt();
-
-        divisoresPrimos(n);
-    }
-
-    /**
-     * Presenta por consola los números primos divisores de un número
-     *
-     * @param n Número a analizar
-     */
-    private static void divisoresPrimos(int n) {
-        if (esPrimo(n)) {
-            System.out.println(n + " es un número primo");
-        } else {
-            System.out.println("Los divisores primos de " + n + " son:");
-            for (int i = 2, aux = n; aux >= 2; aux--) {
-                if (esPrimo(aux) && n % aux == 0) {
-                    System.out.println(aux);
-                }
+        int[] resultado = {8, 9, 10, 3, 36, 15};
+        
+        int[] apuesta = {12, 36, 8, 5, 14, 19};
+        
+        int contador = 0;
+              
+        Arrays.sort(resultado);
+        
+        for (int element: apuesta){
+            if (Arrays.binarySearch(resultado, element) > 0) {
+                contador++;
             }
-
         }
-    }
-
-    /**
-     * Identifica cuando un número es primo
-     *
-     * @param n número sujeto a análisis
-     * @return Boolean true si es primo
-     */
-    private static boolean esPrimo(int n) {
-        boolean flag = true;
-        int i = 2;
-        while (i <= (int) Math.sqrt(n) && flag == true) {
-            if (n % i == 0) {
-                flag = false;
-            }
-            i++;
-        }
-        return flag;
+        
+        System.out.println("Han habido " + contador + " aciertos.");
+        
+        
     }
 
 }
