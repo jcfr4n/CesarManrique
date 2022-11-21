@@ -1,2 +1,7 @@
-/PRO/Main/nbproject/private/
-/PRO/Main/build/
+# /PRO/Main/nbproject/private/
+# /PRO/Main/build/
+
+#Queremos ignorar los archivos de Main, excepto los del directorio src
+
+/PRO/Main/
+!/PRO/Main/src/
