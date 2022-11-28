@@ -14,32 +14,63 @@ import java.util.Arrays;
 public class Main {
 
     /**
-     *
+     * Realiza la función: int[ ] buscarTodos (int t[ ], int clave), que crea y
+     * devuelve una tabla con todos los índices de los elementos donde se
+     * encuentra la clave de búsqueda. En el caso de que clave no se encuentre
+     * en la tabla t, la función devolverá una tabla vacía.
      */
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int clave;
+        int[] t, result;
 
-        int valores[];
-        valores = new int[10]; 
+        t = new int[20];
+        poblarArray(t);
 
-        //Vamos a recorrer la tabla para inicializar con valores aleatorios. 
-        //Cuando se modifican los elementos de una tabla no podemos usar for-each 
-        
-        for (int i = 0; i < valores.length; i++) { 
-            valores[i] = (int)(Math.random()*100 + 1); 
+        result = new int[0];
+
+        System.out.print("Introduzca un número de 1 a 20 para ver cuantas "
+                + "\nveces aparece en nuestro array aleatorio de 20 números: ");
+        clave = sc.nextInt();
+
+        result = buscarTodos(t, clave);
+
+        if (result.length == 1) {
+
+            System.out.println("\nHay " + result.length + " coincidencia y se "
+                    + "\nencuentra en el índice: \n"
+                    + Arrays.toString(result) + "\ndel array");
+            System.out.println("(Recordar que los índices empiezan en 0)");
+
+        } else if (result.length > 1) {
+
+            System.out.println("\nHay " + result.length + " coincidencias y se "
+                    + "\nencuentran en los índices: \n"
+                    + Arrays.toString(result) + "\ndel array");
+        } else {
+            System.out.println("\nNo hay coincidencias para este "
+                    + "número en el array " + Arrays.toString(result));
         }
-        
-        //Ahora recorreremos la tabla para calcular la suma de sus elementos 
-        
-        int suma = 0; 
-        
-        for(int valor: valores) { 
-            suma += valor; 
-        } 
-        
-        System.out.println("La suma de los valores aleatorios es " + suma);
 
+        System.out.println("\nArray aleatorio:");
+        System.out.println(Arrays.toString(t));
+    }
 
+    private static int[] buscarTodos(int[] t, int clave) {
+        int[] result = new int[0];
+        for (int i = 0; i < t.length; i++) {
+            if (t[i] == clave) {
+                result = Arrays.copyOf(result, result.length + 1);
+                result[result.length - 1] = i;
+            }
+        }
+        return result;
+    }
 
+    private static void poblarArray(int[] t) {
+        for (int i = 0; i < t.length; i++) {
+            t[i] = (int) (Math.random() * 20) + 1;
+        }
     }
 
 }
