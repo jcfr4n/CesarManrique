@@ -6,62 +6,105 @@ package main;
 
 import java.util.Scanner;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
-/**
- *
- * @author juancfm
- */
 public class Main {
-
-    /**
-     * 5.12. Escribe la función void desordenar (int t[ ]), que cambia de forma
-     * aleatoria los elementos contenidos en la tabla t. Si la tabla estuviera
-     * ordenada, dejaría de estarlo.
-     */
     public static void main(String[] args) {
-        
-        Scanner sc= new Scanner(System.in);
-        int longitud;
-        
-        int[] tabla1;
+        /**
+         * 5.18. Escribe un programa que solicite los elementos de una matriz
+         * de tamaño 4 x 4. La aplicación debe decidir si la matriz introducida
+         * corresponde a una matriz mágica, que es aquella donde la suma de los
+         * elementos de cualquier fila o de cualquier columna valen lo mismo.
+         */
 
-        System.out.println("Vamos a crear un array del tamaño que Ud desee,"
-                + "\nluego lo vamos a poblar con datos aleatorios(entre 1 y 50)"
-                + "\ny finalmente, lo vamos a desordenar.");
-        System.out.print("Por favor introduzca la longitud del array: ");
-        longitud = sc.nextInt();
+        int[][] matriz = new int[4][4];
+        Scanner sc = new Scanner(System.in);
+        String option;
+        boolean continuar = true;
+
+        System.out.println(
+                "\nVamos a solicitar 16 elementos para formar una "
+                        + "\nmatriz 4x4 y vamos a comprobar si es una matriz "
+                        + "mágica, es decir, que "
+                        + "\nla suma de cualquiera de sus filas o de sus "
+                        + "columnas es igual, una \nforma fácil de comprobarlo "
+                        + "sería introduciendo los 16 números iguales."
+                        + "\nEmpecemos: ");
+
+        // Creamos un bucle para que el usuario pueda probar variaz matrices
+        while (continuar) {
+            introducirNumeros(matriz, sc); // Método para introducir los datos
+            comprobarMatriz(matriz); // Método que comprueba las matrices
+
+            System.out.print("Desea comprobar otra matriz (s/n): ");
+            option = sc.next();
+            if (option.equals("s")) {
+                System.out.println("\nDe acuerdo. Empecemos:");
+            } else {
+                continuar = false;
+            }
+
+        }
+
         sc.close();
-        
-        tabla1 = new int[longitud];
-        poblarArray(tabla1);
-        System.out.println("La tabla quedó así: ");
-        System.out.println(Arrays.toString(tabla1));
-        
-        System.out.println("Al desordenarla quedó asi: ");
-        desordenar(tabla1);
         System.exit(0);
 
     }
-    
-    private static void poblarArray(int[] tabla1) {
-        for (int i = 0; i < tabla1.length; i++) {
-            tabla1[i] = (int) (Math.random() * 20) + 1;
+
+    /**
+     * Método para la introducción de los números que forman la matriz
+     * 
+     * @param matriz
+     * @param sc
+     */
+    private static void introducirNumeros(int[][] matriz, Scanner sc) {
+        for (int i = 0; i < matriz.length; i++) {
+            System.out.print("\n");
+            for (int j = 0; j < matriz[i].length; j++) {
+                System.out.print("\nVamos a introducir el valor para la fila " 
+                        + i + ", columna " + j + ": ");
+                matriz[i][j] = sc.nextInt();
+            }
         }
+        System.out.println("\nLa matriz introducida es :");
+        mostrarMatriz(matriz);
     }
 
-    private static void desordenar(int[] tabla1) {
-        
-        List<Integer> lista;
-        lista = (List) Arrays.asList((int[]) tabla1);
-        
-        Collections.shuffle(lista);
-        
-        
-        System.out.println(lista.toString());
-        
-        
+    /**
+     * Muestra la matriz una vez introducidos los datos
+     * 
+     * @param matriz
+     */
+    private static void mostrarMatriz(int[][] matriz) {
+        for (int i = 0; i < matriz.length; i++) {
+            System.out.print("\n");
+            for (int j = 0; j < matriz[i].length; j++) {
+                System.out.print("\t" + matriz[i][j]);
+            }
+        }
+
+    }
+
+    /**
+     * Comprueba la matriz para ver si es una matriz mágica
+     * 
+     * @param matriz
+     */
+    private static void comprobarMatriz(int[][] matriz) {
+        int[] columnas = new int[4];
+        int[] filas = new int[4];
+        for (int i = 0; i < matriz.length; i++) {
+            System.out.print("\n");
+            for (int j = 0; j < matriz[i].length; j++) {
+                filas[i] += matriz[i][j];
+                columnas[j] += matriz[i][j];
+            }
+        }
+        System.out.println(
+                Arrays.equals(filas, columnas) ? 
+                        "Excelente, esa es una tabla mágica" : 
+                        "Lo siento, siga intentando."
+        );
+
     }
 
 }

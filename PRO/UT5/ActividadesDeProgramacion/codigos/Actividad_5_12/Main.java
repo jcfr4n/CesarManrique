@@ -1,11 +1,18 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package main;
+
 import java.util.Scanner;
 import java.util.Arrays;
 
 public class Main {
+
     /**
      * Escribe la función void desordenar (int t[ ]), que cambia de forma
-     * aleatoria los elementos contenidos en la tabla t.
-     * Si la tabla estuviera ordenada, dejaría de estarlo.
+     * aleatoria los elementos contenidos en la tabla t. Si la tabla estuviera
+     * ordenada, dejaría de estarlo.
      */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -15,7 +22,8 @@ public class Main {
         while (!option.equals("a") && !option.equals("b")) {
             System.out.println("Indique si desea:");
             System.out.println("\ta\tIntroducir su propio array.");
-            System.out.println("\tb\tGenerar un array aleatorio con números entre 1 y 50.");
+            System.out.println("\tb\tGenerar un array aleatorio con números "
+                    + "entre 1 y 50.");
             option = sc.next();
         }
 
@@ -26,7 +34,6 @@ public class Main {
         /**
          * Se determina cual método se usa para poblar array
          */
-
         if (option.equals("a")) {
             poblarManual(myArray);
             System.out.println("\nArray generado por el usuario: ");
@@ -59,13 +66,14 @@ public class Main {
 
     /**
      * Prepara el poblado manual del array por parte del usuario
-     * 
+     *
      * @param myArray
      */
     private static void poblarManual(int[] myArray) {
         Scanner sc1 = new Scanner(System.in);
         for (int i = 0; i < myArray.length; i++) {
-            System.out.print("\nIntroduzca un valor para el elemento con indice " + i + ": ");
+            System.out.print("\nIntroduzca un valor para el elemento con "
+                    + "indice " + i + ": ");
             myArray[i] = sc1.nextInt();
         }
         // return myArray;
@@ -73,7 +81,7 @@ public class Main {
 
     /**
      * Prepara el poblado aleatorio del array con números enteros entre 1 y 50
-     * 
+     *
      * @param myArray
      */
     private static void poblarArray(int[] myArray) {
@@ -88,7 +96,7 @@ public class Main {
      * dentro del rango de índices del array, procediendo luego a intercambiar
      * el elemento i por el elemento j, lo que produce una mezcla aleatoria de
      * los elementos
-     * 
+     *
      * @param myArray
      */
     private static void desordenar(int[] myArray) {
