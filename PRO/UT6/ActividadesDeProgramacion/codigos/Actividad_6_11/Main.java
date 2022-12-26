@@ -18,8 +18,9 @@ public class Main {
      * en la tabla t, la función devolverá una tabla vacía.
      */
     public static void main(String[] args) {
+        char c = 97;
 
-        System.out.println('c' + 'A' - 'a');
+        System.out.println(c);
 
         System.exit(0);
     }
