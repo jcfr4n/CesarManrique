@@ -16,18 +16,16 @@ public class Main {
     /**
      *
      * 6.16. Lee una palabra o frase y muestra el proceso en el que cada letra
-     * se sustituye por otro símbolo no alfabético. Por ejemplo el carácter 'a' 
-     * se podría sustituir por el carácter '@', la 'e' por '€', la 'i' por '1', 
+     * se sustituye por otro símbolo no alfabético. Por ejemplo el carácter 'a'
+     * se podría sustituir por el carácter '@', la 'e' por '€', la 'i' por '1',
      * etcétera.
      *
      */
-    
     public static void main(String[] args) {
         String sentencia = "";
         Scanner sc = new Scanner(System.in);
-        
+
         // Se llaman a los distintos métodos usados 
-        
         presentarValor(
                 cambiarLetras(
                         capturarDatos(sc, sentencia)
@@ -39,11 +37,12 @@ public class Main {
          */
         sc.close();
         System.exit(0);
-        
-   }
-     /**
+
+    }
+
+    /**
      *
-     * Captura la sentencia que será depurada de los comentarios
+     * Captura la sentencia que a la que se le cambiarán los caracteres
      *
      * @param sc Scanner usado para la captura de datos
      * @param sentencia Sentencia, frase o palabra a ser procesada
@@ -51,43 +50,45 @@ public class Main {
      */
     private static String capturarDatos(Scanner sc, String sentencia) {
 
-        System.out.print("Introduzca la sentencia a depurar: ");
+        System.out.print("Introduzca la sentencia a cambiar: ");
         sentencia = sc.nextLine();
 
         return sentencia;
 
     }
-    
-     /**
+
+    /**
      *
      * Cambia las letras por los símbolos.
-     * 
+     *
      * Para hacer esto de manera diferente a la actividad 6_11 se optó por
-     * cambiar cada caracter por el caracteres correspondientes a los 
-     * códigos decimales 913 y siguientes (alfabeto griego)
+     * cambiar cada caracter por el caracteres correspondientes a los códigos
+     * decimales 913 y siguientes (alfabeto griego)
      *
      * @param sentencia Sentencia a la que se le van a cambiar las caracteres
      * @return Retorna un String con las letras de la sentencia cambiadas
      */
     private static String cambiarLetras(String sentencia) {
-        
+
         String letrasCambiadas = "";
         char c;
         for (int i = 0; i < sentencia.length(); i++) {
             c = sentencia.charAt(i);
-            
-                if (c != ' ')   c += 913 - 65;
-            
-            letrasCambiadas +=  c;
-            
+
+            if (c != ' ') {
+                c += 913 - 65;
             }
 
-        return letrasCambiadas;
-            
+            letrasCambiadas += c;
+
         }
-    
+
+        return letrasCambiadas;
+
+    }
+
     /**
-     * Imprime el resultado del proceso de cambio de letras por pantalla entre 
+     * Imprime el resultado del proceso de cambio de letras por pantalla entre
      * dos líneas hechas con el caracter "_" para que se pueda visualizar mejor
      *
      * @param sentencia Frase que va a ser presentada por pantalla
@@ -105,6 +106,6 @@ public class Main {
         System.out.print("\n");
         System.out.println("\n\n\n");
     }
-    
+
 }
 
