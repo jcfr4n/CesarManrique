@@ -5,11 +5,9 @@
 package calculadoraEjemplo;
 
 /**
+ * Clase para realizar la operación de resta.
  *
  * @author juancfm
- */
-/**
- * Clase para realizar la operación de resta.
  */
 public class Resta {
 

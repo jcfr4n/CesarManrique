@@ -5,12 +5,10 @@
 package calculadoraEjemplo;
 
 /**
+ * Clase para realizar la operación de división.
  *
  * @author juancfm
  *
- */
-/**
- * Clase para realizar la operación de división.
  */
 public class Division {
 

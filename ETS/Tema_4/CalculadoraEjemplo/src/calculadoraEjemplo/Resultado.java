@@ -11,6 +11,13 @@ package calculadoraEjemplo;
  */
 public class Resultado {
 
+    /**
+     * Método que presenta el resultado de las operaciones y les da formato para
+     * presentar resultado con dos decimales.
+     *
+     * @param operacion el nombre de la operación efectuada
+     * @param numero el resultado obtenido
+     */
     public static void presentarResultado(String operacion, double numero) {
         System.out.println("\n\n########################################\n");
         System.out.print("El resultado de la " + operacion + " es: ");
