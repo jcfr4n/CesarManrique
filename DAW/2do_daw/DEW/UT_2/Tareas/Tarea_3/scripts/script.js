@@ -3,8 +3,9 @@ https://www.interior.gob.es/opencms/es/servicios-al-ciudadano/tramites-y-gestion
 */
 const LETRAS = 'TRWAGMYFPDXBNJZSQVHLCKET';
 let dni;
-let alerta = [];
+let alerta;
 let continuar = true;
+let validar;
 
 /**
  * Pide al usuario que introduzca su DNI
@@ -15,7 +16,7 @@ function pedirDni() {
     dni = prompt(
         'Introduce tu DNI: \n' + 
         '(Debe ser númerico y tener 8 dígitos.) \n' +
-        '(Para salir, incumple alguna de las condiciones anteriores.)'
+        '(Para salir, pulsa enter con la casilla vacia.)'
         );
     return dni;
 }
@@ -27,18 +28,27 @@ function pedirDni() {
  * @returns boolean
  */
 function validarDni(dni) {
+    validar = true;
+    alerta = [];
+
     if (dni.length != 8) {
         alerta.push('El DNI debe tener 8 dígitos');
-        continuar = false;
+        validar = false;
+        continuar
     }
     if (isNaN(dni)) {
         alerta.push('El DNI debe ser un número');
+        validar = false;
+    }
+    if (dni == ''){
+        alert('Adios...');
+        validar = false;
         continuar = false;
     }
-    if (continuar == false) {
+    if (!validar && continuar) {
         alert(alerta.join('\n'));
     }
-    return continuar;
+    return validar;
 }
 
 /**
