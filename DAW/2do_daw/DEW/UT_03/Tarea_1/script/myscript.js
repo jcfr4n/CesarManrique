@@ -4,7 +4,7 @@ const NUEVA_VENTANA = () => {
     win.document.write('<h3>Ejemplo de Ventana Nueva</h3>');
     win.document.write(`<span>URL Completa: ${win.location.href}</span><br/>`);
     win.document.write(`<span>Protocolo: ${win.location.protocol}</span><br/>`);
-    win.document.write(`<span>Navegador: ${win.navigator.appNamet}</span><br/>`);
+    win.document.write(`<span>Navegador: ${win.navigator.appName}</span><br/>`);
     message += (navigator.javaEnabled()) ? 'Java SI disponible en esta ventana' :'Java NO disponible en esta ventana';
     win.document.write(`<span>Navegador: ${message}</span><br/>`);
     win.document.write('<iframe src="https://cifpcesarmanrique.es/" width="800px" height="600" style="border:none;"></iframe>');
