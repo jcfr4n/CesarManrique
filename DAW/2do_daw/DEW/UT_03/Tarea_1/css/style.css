@@ -1,5 +1,12 @@
-iframe {
-    width: 800px;
-    height: 600px;
-    border: none;
+h1 {
+    font-size: 2rem;
+}
+hr {
+    font-color: #F00;
+}
+body {
+    font-size: 1rem;
+}
+strong {
+    font-size: 1.5rem;
 }
