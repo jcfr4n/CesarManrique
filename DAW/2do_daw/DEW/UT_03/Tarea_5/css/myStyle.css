@@ -1,0 +1,54 @@
+/* botones */
+.nav_button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #f5e026;
+    color: #020202;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  /* Título */
+  #titulo {
+    font-size: 3rem;
+    color: rgb(36, 23, 7);
+    text-align: center;
+    margin: 3rem auto;
+  }
+
+  body {
+    background-color: cadetblue;
+  }
+  
+  /* contenedor de botones */
+  #principal {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  /* Cambiar a una sola columna en pantallas más pequeñas (menos de 600px) */
+  @media (max-width: 600px) {
+    .nav_button {
+      width: 100%; /* Ocupar todo el ancho de la pantalla */
+    }
+  }
+  
+  /* Animación al pasar el cursor sobre los botones */
+  .nav_button:hover {
+    background-color: #f08731;
+  }
+  
+  /* Animación de transición */
+  .nav_button {
+    transition: transform 0.5s ease;
+  }
+  
+  /* Animación al hacer clic en los botones */
+  .nav_button:active {
+    transform: scale(0.95);
+  }
