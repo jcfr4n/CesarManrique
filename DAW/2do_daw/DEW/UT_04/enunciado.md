@@ -22,4 +22,4 @@
     
 ## Ambos ejercicios deben estar en el mismo documento html. A continuación se muestra la apariencia que debería tener el programa:
 
-!['Salida por pantalla](img/salida_programa.png)
+!['Salida por pantalla](./Tarea_7/img/salida_programa.png)
