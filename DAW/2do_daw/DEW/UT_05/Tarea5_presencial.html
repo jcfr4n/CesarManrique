@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>DWEC05 - Formulario</title>
+        <script src="scriptTarea5.js"></script>
+        <link rel="stylesheet" href="estiloTarea5.css">
+        <link rel="stylesheet" type="text/css" href="https://www3.gobiernodecanarias.org/educacion/cau_ce/cookies/cookieconsent.min.css"/><script  type="text/javascript" src="https://www3.gobiernodecanarias.org/educacion/cau_ce/cookies/cookieconsent.min.js"></script><script type="text/javascript" src="https://www3.gobiernodecanarias.org/educacion/cau_ce/cookies/cauce_cookie.js"></script><script type="text/javascript" src="https://www3.gobiernodecanarias.org/educacion/cau_ce/estadisticasweb/scripts/piwik-base.js"></script><script type="text/javascript" src="https://www3.gobiernodecanarias.org/educacion/cau_ce/estadisticasweb/scripts/piwik-eforma.js"></script>
+        <script src="myScript.js"></script>
+    </head>
+    <body>
+        <fieldset>
+            <legend>DWEC05 - Tarea 5.1</legend>
+            <form>
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" />
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" name="apellidos" id="apellidos"/>
+                <label for="edad">Edad:</label>
+                <input name="edad" type="text" id="edad" />
+                <label for="nif">NIF:</label>
+                <input name="nif" type="text" id="nif" />
+                <label for="email">E-mail:</label>
+                <input name="email" type="text" id="email" />
+                <label for="provincia">Provincia:</label>
+                <select name="provincia" id="provincia" >
+                    <option value="" selected="selected">Seleccione Provincia</option>
+                    <option value="SC">S/C de Tenerife</option>
+                    <option value="LP">Las Palmas de Gran Canaria</option>                   
+                </select>
+                <label for="isla">Isla:</label>
+                <select name="isla" id="isla" >
+                    <option value="" selected="selected">Seleccione Isla</option>
+                    <option value="LP">La Palma</option>
+                    <option value="LG">La Gomera</option>  
+                    <option value="EH">El Hierro</option>    
+                    <option value="TF">Tenerife</option>    
+                    <option value="GC">Gran Canaria</option> 
+                    <option value="FV">Fuerteventura</option>     
+                    <option value="LZ">Lanzarote</option>    
+                </select>
+                <label for="fecha">Fecha Nacimiento:</label>
+                <input name="dia" type="text" id="fecha" />
+                <label for="telefono">Teléfono:</label>
+                <input name="telefono" type="text" id="telefono" />
+                <input type="reset" name="limpiar" id="button" value="Limpiar" />
+                <input type="submit" name="enviar" id="enviar" value="Enviar" />
+            </form> 
+            <p id="errores"></p>
+            <p id="intentos"></p>
+        </fieldset>
+    </body>
+</html>
