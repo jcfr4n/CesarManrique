@@ -1,0 +1,23 @@
+Realizar la validación del formulario facilitado en el enunciado, usando el Modelo de registro avanzado de eventos según W3C, cumpliendo los siguientes requisitos:
+
+Programar el código de JavaScript en un fichero independiente. Las modificaciones que se permiten realizar en el fichero .html son la de escribir la referencia al fichero de JavaScript para enlazarlo solamente. No se permite cambiar los type de los inputs.
+
+Almacenar en una cookie el número de intentos de envío del formulario que se van produciendo y mostrar un mensaje en el id="intentos" similar a: "Intento de Envíos del formulario: X". Es decir cada vez que le demos al botón de enviar tendrá que incrementar el valor de la cookie en 1 y mostrar su contenido en el id="intentos" del HTML.
+
+Todos los campos del formulario son obligatorios rellenarlos para enviar el formulario. Una vez que los campos NOMBRE y APELLIDOS pierdan el foco, el contenido que se haya escrito en esos campos se convertirá en, la primera letra en mayúsculas y el resto en mínusculas.
+
+Validar los campos de texto NOMBRE y APELLIDOS, NOMBRE pueden ser hasta 20 letras incluído espacio en blanco por si tiene un nombre compuesto. Y APELLIDO hasta 35 letras incluido en varias ocasiones espacio en blanco por si tiene un apellido compuesto. Si se produce algún error, mostrar el mensaje personalizado en el id="errores" del HTML, y poner el foco en el campo correspondiente. También se deberá poner el borde del campo en rojo para señalar dónde está el error. Para ello tienes en el archivo CSS una clase error ya implementada para tal finalidad.
+
+Validar la EDAD que contenga solamente valores numéricos y que esté en el rango de 18 a 105. Si se produce algún error, mostrar el mensaje personalizado en el id="errores" del HTML, y poner el foco en el campo correspondiente. También se deberá poner el borde del campo en rojo para señalar dónde está el error. Para ello tienes en el archivo CSS una clase error ya implementada para tal finalidad.
+
+Validar el NIF. Utilizar una expresión regular que permita solamente 8 números un guión y una letra. Si se produce algún error, mostrar el mensaje personalizado en el id="errores" del HTML, y poner el foco en el campo correspondiente. También se deberá poner el borde del campo en rojo para señalar dónde está el error. Para ello tienes en el archivo CSS una clase error ya implementada para tal finalidad. No es necesario validar que la letra sea correcta. Explicar las partes de la expresión regular mediante comentarios.
+
+Validar el E-MAIL. Si se produce algún error, mostrar el mensaje personalizado en el id="errores" del HTML, y poner el foco en el campo correspondiente. También se deberá poner el borde del campo en rojo para señalar dónde está el error. Para ello tienes en el archivo CSS una clase error ya implementada para tal finalidad.
+
+Validar que se haya seleccionado alguna de las PROVINCIAS. Una vez se haya elegido una opción se habilitará la selección para Isla(por defecto la selección isla debe estar desactivada), dejando solo la elección de las islas de dicha provincia a elegir. Si se produce algún error, mostrar el mensaje personalizado en el id="errores" del HTML, y poner el foco en el campo correspondiente. También se deberá poner el borde del campo en rojo para señalar dónde está el error. Para ello tienes en el archivo CSS una clase error ya implementada para tal finalidad.
+
+Validar el campo FECHA DE NACIMIENTO debe coincidir la fecha con la edad que dijo previamente que tenía.Si se produce algún error, mostrar el mensaje personalizado en el id="errores" del HTML, y poner el foco en el campo correspondiente. También se deberá poner el borde del campo en rojo para señalar dónde está el error. Para ello tienes en el archivo CSS una clase error ya implementada para tal finalidad.
+
+Validar el campo TELEFONO, debe permitir 9 dígitos obligatorios y el primer dígito debe ser 6 o 9. Si se produce algún error, mostrar el mensaje personalizado en el id="errores" del HTML, y poner el foco en el campo correspondiente. También se deberá poner el borde del campo en rojo para señalar dónde está el error. Para ello tienes en el archivo CSS una clase error ya implementada para tal finalidad.
+
+Pedir confirmación de envío del formulario. Si se confirma el envío realizará el envío de los datos y modificará el valor de la cookie a 0; en otro caso cancelará el envío.
