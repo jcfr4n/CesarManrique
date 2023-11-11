@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>UT6 - DOM</title>
+    <link rel="stylesheet" type="text/css" href="https://www3.gobiernodecanarias.org/educacion/cau_ce/cookies/cookieconsent.min.css"/><script  type="text/javascript" src="https://www3.gobiernodecanarias.org/educacion/cau_ce/cookies/cookieconsent.min.js"></script><script type="text/javascript" src="https://www3.gobiernodecanarias.org/educacion/cau_ce/cookies/cauce_cookie.js"></script><script type="text/javascript" src="https://www3.gobiernodecanarias.org/educacion/cau_ce/estadisticasweb/scripts/piwik-base.js"></script><script type="text/javascript" src="https://www3.gobiernodecanarias.org/educacion/cau_ce/estadisticasweb/scripts/piwik-eforma.js"></script></head>
+    <body>
+        <label for="provincias">Elige tu Provincia:</label>
+        <select name="provincias" id="provincias">
+            <option value=" " selected></option>
+            <option value="SC">Santa Cruz de Tenerife</option>
+            <option value="LPGC">Las Palmas de Gran Canaria</option>            
+        </select>
+        <label for="islas">Elige tu Isla de Residencia</label>
+        <select name="islas" id="islas">
+            <option value=" " selected></option>
+            <optgroup label="SC">
+                <option value="LP">La Palma</option>
+                <option value="EH">El Hierro</option>
+                <option value="LG">La Gomera</option>
+                <option value="TF">Tenerife</option>
+            </optgroup>
+            <optgroup label="LPGC">
+                <option value="GC">Gran Canaria</option>
+                <option value="FV">Fuerteventura</option>
+                <option value="LZ">Lanzarote</option>
+            </optgroup>
+        </select>
+        <label id="contenedor_imag"></label>
+        <ul id="LP">
+            <li>Tijarafe</li>
+            <li>Mazo</li>
+            <li>Garafía</li>
+        </ul>
+        <ul id="EH">
+            <li>Valverde</li>
+            <li>Frontera</li>
+            <li>El Pinar</li>
+        </ul>
+        <ul id="LG">
+            <li>Valle Gran Rey</li>
+            <li>San Sebastián</li>
+            <li>Hermigua</li>
+        </ul>
+        <ul id="TF">
+            <li>Tegueste</li>
+            <li>El Tanque</li>
+            <li>Vilaflor</li>
+        </ul>
+        <ul id="GC">
+            <li>Telde</li>
+            <li>La Aldea de San Nicolás</li>
+            <li>Moya</li>
+        </ul>
+        <ul id="FV">
+            <li>Betancuria</li>
+            <li>La Oliva</li>
+            <li>Tuineje</li>
+        </ul>
+        <ul id="LZ">
+            <li>Teguise</li>
+            <li>Tías</li>
+            <li>San Bartolomé</li>
+        </ul>       
+        <p id=parrafo></p>
+    </body>
+</html>
