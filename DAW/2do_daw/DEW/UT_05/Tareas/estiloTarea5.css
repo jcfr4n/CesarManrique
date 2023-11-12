@@ -1,0 +1,49 @@
+label{
+    width: 150px;
+    float:left;
+    margin-bottom:5px;     
+}
+input,select {
+    width:150px;
+    float:left;
+    margin-bottom:5px;
+}
+fieldset{
+    background:#4f6cec;
+    width:350px;
+    border: thick solid #306;
+}
+legend{
+    border-top-width: medium;
+    border-right-width: medium;
+    border-bottom-width: medium;
+    border-left-width: medium;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    background-color: #FFF;     
+}
+#mensajes{
+    float: left;
+    background:#33FF33;
+    width: 325px;
+}
+#errores{
+    float: left;
+    background:#FF6633;
+    width: 325px;
+}
+#intentos{
+    float: left;
+    background:#CCFF33;
+    width: 325px;
+}
+.error{
+    border: solid 2px #FF0000;
+}
+
+::placeholder, select:required:invalid, #fecha {
+    color:darkgrey;
+}
+
