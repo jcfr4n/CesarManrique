@@ -1,8 +1,8 @@
-function invisivilizar(colection) {
+function ocultar(colection) {
 
     for (let i = 0; i < colection.length; i++) {
         const element = colection[i];
-        element.style.visibility = "hidden";
+        element.style.display = "none";
     }
 
 }
@@ -33,7 +33,9 @@ function mostrarPueblos(isla, islas, uls) {
                 const brother = brothers[i];
                 (brother !== this) ? brother.style.color = "blue" : "";
             }
-            mostrarImagenIsla(isla, this.innerHTML);
+
+            let nombreLargoIsla = islas.options[islas.selectedIndex].textContent;
+            mostrarImagenIsla(isla, this.innerHTML, nombreLargoIsla);
         });
 
         contenedorPueblos.appendChild(nuevoElemento);
@@ -46,30 +48,37 @@ function mostrarPueblos(isla, islas, uls) {
     contenedorPueblos.style.left = islasRect.right + window.scrollX + 10 + 'px';
 }
 
-function mostrarImagenIsla(isla, puebloElegido) {
+function mostrarImagenIsla(isla, puebloElegido, nombreLargoIsla) {
     // Crear la imagen
     let imagen = document.createElement('img');
-    imagen.setAttribute('src', './islas/' + isla + '.png'); // Ajusta la ruta según tus necesidades
+    imagen.setAttribute('src', 'islas/' + isla.toLowerCase() + '.png'); // Ajusta la ruta según tus necesidades
     imagen.setAttribute('alt', 'Imagen de ' + isla);
 
+    let contenedorPueblos = document.getElementById('contenedor_pueblos'); 
+    let contenedorPueblosRect = (contenedorPueblos.getBoundingClientRect());
+    contenedorPueblos.style.left = contenedorPueblosRect.left  + 210 + 'px';
+
+
     // Ajustar tamaño y posición de la imagen
-    imagen.style.width = '200px'; // Ajusta el tamaño según tus necesidades
+    imagen.style.width = '100px'; // Ajusta el tamaño según tus necesidades
     imagen.style.height = 'auto'; // Mantener la proporción original
-    imagen.style.position = 'relative'; // Otra opción podría ser 'absolute', dependiendo del diseño
+    imagen.style.position = 'absolute'; 
 
     // Añadir la imagen al contenedor
     let contenedorImagen = document.getElementById('contenedor_imag');
     contenedorImagen.innerHTML = ''; // Limpiar cualquier contenido existente
+    contenedorImagen.style.display = "";
     contenedorImagen.appendChild(imagen);
 
     // Actualizar el párrafo con la información
     let parrafo = document.getElementById('parrafo');
-    parrafo.innerHTML = `Has elegido ${puebloElegido}, un municipio de la isla de ${isla}.`;
+    parrafo.innerHTML = `Has elegido ${puebloElegido}, un municipio de la isla de ${nombreLargoIsla}.`;
     parrafo.style.color = 'green';
 
     // Cambiar la posición del párrafo
     parrafo.style.position = 'relative'; // Otra opción podría ser 'absolute', dependiendo del diseño
-    parrafo.style.top = '10px'; // Ajusta la posición según tus necesidades
+    parrafo.style.top = '80px'; // Ajusta la posición según tus necesidades
+    parrafo.style.textAlign = 'end'; // Ajusta la posición según tus necesidades
 }
 
 window.onload = (e) => {
@@ -79,27 +88,20 @@ window.onload = (e) => {
     let optgroups = document.getElementsByTagName('optgroup');
     let uls = document.getElementsByTagName('ul');
 
-    console.log(uls);
-
-    invisivilizar(labels);
-    invisivilizar(selects);
-    invisivilizar(listas);
-    invisivilizar(uls);
+    ocultar(labels);
+    ocultar(selects);
+    ocultar(listas);
+    ocultar(uls);
 
     const provincias = document.getElementById("provincias");
     const islas = document.getElementById("islas")
 
-    console.log(provincias);
-    console.log(islas);
-
-    provincias.style.visibility = "";
-    labels[0].style.visibility = "";
+    provincias.style.display = "";
+    labels[0].style.display = "";
 
     provincias.addEventListener('change', function mostrarIslas(e) {
-        islas.style.visibility = "";
-        labels[1].style.visibility = "";
-
-        console.log(provincias.value);
+        islas.style.display = "";
+        labels[1].style.display = "";
 
         switch (provincias.value) {  // Cambiado de islas.value a provincias.value
             case "LPGC":
@@ -114,13 +116,11 @@ window.onload = (e) => {
                 optgroups[1].style.display = "none";
                 optgroups[0].style.display = "none";
                 provincias.focus();
-                islas.style.visibility = "hidden";
-                labels[1].style.visibility = "hidden";
+                islas.style.display = "none";
+                labels[1].style.display = "none";
                 break;
         }
     });
-
-    console.dir(islas.options[islas.selectedIndex].textContent);
 
     islas.addEventListener('change', function seleccionarIsla(e) {
         switch (islas.value) {
