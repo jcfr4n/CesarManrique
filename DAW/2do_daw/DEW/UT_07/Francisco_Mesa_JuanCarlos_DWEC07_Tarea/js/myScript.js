@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
      */
     function cargarDatos(id, idSufijo, datos = {}) {
         const xhr = new XMLHttpRequest();
-        xhr.open('POST', './functions/acceso_bd.php', true);
+        xhr.open('POST', './php/acceso_bd.php', true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
         // Convertir el objeto de datos a una cadena de consulta
