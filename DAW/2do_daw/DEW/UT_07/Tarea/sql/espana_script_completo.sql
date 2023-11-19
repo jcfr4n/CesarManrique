@@ -8172,12 +8172,12 @@ INSERT INTO `municipios` (`id_municipio`, `id_provincia`, `cod_municipio`, `DC`,
 
 DROP TABLE IF EXISTS `provincias`;
 CREATE TABLE IF NOT EXISTS `provincias` (
-  `id_comunidades` tinyint NOT NULL,
+  `id_comunidad` tinyint NOT NULL,
   `id_provincia` smallint DEFAULT NULL,
-  `provincia` varchar(30) DEFAULT NULL
+  `nombre` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-INSERT INTO `provincias` (`id_comunidades`, `id_provincia`, `provincia`) VALUES
+INSERT INTO `provincias` (`id_comunidad`, `id_provincia`, `nombre`) VALUES
 (8, 2, 'Albacete'),
 (10, 3, 'Alicante/Alacant'),
 (1, 4, 'Almería'),

@@ -1,17 +1,19 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Obtengo todos los elementos que voy a utilizar
     const comunidades = document.getElementById('comunidades');
     const provincias = document.getElementById('provincias');
     const municipios = document.getElementById('municipios');
     const etiq_provincias = document.getElementById('etiq_provincias');
     const etiq_municipios = document.getElementById('etiq_municipios');
 
+    // Oculto los campos de provincias y municipios
     provincias.style.display = "none";
     etiq_provincias.style.display = "none";
     municipios.style.display = "none";
     etiq_municipios.style.display = "none";
 
-    // Cargar comunidades al inicio
-    cargarDatos('comunidades', 'comunidades', 'comunidad', { tabla: 'comunidades' });
+    // Cargo las comunidades al inicio
+    cargarDatos('comunidades', 'comunidad', { tabla: 'comunidades' });
 
     // Evento al cambiar comunidades
     comunidades.addEventListener('change', function () {
@@ -22,7 +24,8 @@ document.addEventListener('DOMContentLoaded', function () {
             municipios.style.display = "none";
             etiq_municipios.style.display = "none";
         } else {
-            cargarDatos('provincias', 'provincias', 'provincia', { tabla: 'provincias', comunidad: this.value });
+            cargarDatos('provincias', 'provincia', { tabla: 'provincias', comunidad: this.value });
+            // Necesario por si cambiamos la selección
             provincias.value = ''; // Limpiar provincias
             municipios.value = ''; // Limpiar municipios
             etiq_provincias.style.display = "none";
@@ -39,14 +42,23 @@ document.addEventListener('DOMContentLoaded', function () {
             municipios.style.display = "none";
             etiq_municipios.style.display = "none";
         } else {
-            cargarDatos('municipios', 'municipios', 'municipio', { tabla: 'municipios', provincia: this.value });
+            cargarDatos('municipios', 'municipio', { tabla: 'municipios', provincia: this.value });
+            // Necesario por si cambiamos la selección
             municipios.value = ''; // Limpiar municipios
             municipios.style.display = "none";
             etiq_municipios.style.display = "none";
         }
     }), false;
 
-    function cargarDatos(elemento, id, idSufijo, datos = {}) {
+    /**
+     * 
+     * @param {string} id // id de los campos  utilizados
+     * @param {string} idSufijo // sufijo usado para la formación del id de la label del campo
+     * @param {Object} datos // Objeto cuyas propiedades indican los datos para la consulta en base de datos
+     * 
+     * Esta función hace una consulta ajax al servidor, para poblar los campos 
+     */
+    function cargarDatos(id, idSufijo, datos = {}) {
         const xhr = new XMLHttpRequest();
         xhr.open('POST', './functions/acceso_bd.php', true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -103,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // Mostrar el select
                 select.style.display = '';
-                document.getElementById('etiq_' + elemento).style.display = '';
+                document.getElementById('etiq_' + id).style.display = '';
             }
         };
         xhr.send(data);
