@@ -3,8 +3,8 @@
     header("Content-Type: application/json; charset=UTF-8");
     error_reporting(0);
     //capturamos un objeto, estamos recibiendo el objeto de la BD   
-    $objeto = json_decode($_POST["objeto"], false);                          
-    
+    $objeto = json_decode($_POST["objeto"], false);         
+             
     //Parámetro de conexion de la BD por defecto
     $servidor = "localhost";
     $usuario = "root";
