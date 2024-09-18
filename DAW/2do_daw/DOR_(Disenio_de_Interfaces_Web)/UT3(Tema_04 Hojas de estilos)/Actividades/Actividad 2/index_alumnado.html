@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>Binter</title>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" href="" type="text/css" media="screen">
+	</head>
+	<body>		
+        <ul>
+            <li class="tab1"><a href="">Buscar vuelos</a></li>
+            <li class="tab2"><a href="">Vuelo + hotel</a></li>
+            <li class="tab2"><a href="">Coches</a></li>
+            <li class="tab2"><a href="">Hoteles</a></li>
+            <li class="tab2"><a href="">Actividades</a></li>
+        </ul>
+        <form action="" id="search" method="post">
+            <a href="">→ Múltiples trayectos</a>					
+            <select id="origen">
+                <option value="null" name="origen_vuelo">Origen</option>
+                <optgroup class="canarias" label="Islas Canarias">
+                    <option value="VDE">El Hierro      VDE</option>
+                    <option value="FUE">Fuerteventura  FUE</option>
+                    <option value="LPA">Gran Canaria   LPA</option>
+                    <option value="GMZ">La Gomera      GMZ</option>
+                    <option value="SPC">La Palma       SPC</option>
+                    <option value="ACE">Lanzarote      ACE</option>
+                    <option value="TFN">Tenerife Norte TFN</option>
+                    <option value="TFS">Tenerife Sur   TFS</option>
+                </optgroup>
+                <optgroup class="nacionales" label="Destinos nacionales">
+                    <option value="MAD">Madrid MAD</option>
+                </optgroup>
+                <optgroup class="internacionales" label="Destinos internacionales">
+                    <option value="AGA">Agadir AGA</option>
+                    <option value="BJL">Banjul BJL</option>
+                    <option value="RAI">Cabo Verde(Praia)RAI</option>
+                    <option value="SID">Cabo Verde(Sal)SID</option>
+                    <option value="CMN">Casablanca CMN</option>
+                    <option value="DKR">Dakar DKR</option>
+                    <option value="EUN">El Aaiún EUN</option>
+                    <option value="LIS">Lisboa LIS</option>
+                    <option value="FNC">Madeira (Funchal)FNC</option>
+                    <option value="RAK">Marrakech RAK</option>
+                    <option value="NKC">Nuakchot NKC</option>
+                    <option value="PDL">Punta Delgada PDL</option>
+                </optgroup>
+            </select>
+            <select id="destino">
+                <option value="null" name="destino_vuelo">Destino</option>
+                <optgroup class="canarias" label="Islas Canarias">
+                    <option value="VDE">El Hierro      VDE</option>
+                    <option value="FUE">Fuerteventura  FUE</option>
+                    <option value="LPA">Gran Canaria   LPA</option>
+                    <option value="GMZ">La Gomera      GMZ</option>
+                    <option value="SPC">La Palma       SPC</option>
+                    <option value="ACE">Lanzarote      ACE</option>
+                    <option value="TFN">Tenerife Norte TFN</option>
+                    <option value="TFS">Tenerife Sur   TFS</option>
+                </optgroup>
+                <optgroup class="nacionales" label="Destinos nacionales">
+                    <option value="MAD">Madrid MAD</option>
+                </optgroup>
+                <optgroup class="internacionales" label="Destinos internacionales">
+                    <option value="AGA">Agadir AGA</option>
+                    <option value="BJL">Banjul BJL</option>
+                    <option value="RAI">Cabo Verde(Praia)RAI</option>
+                    <option value="SID">Cabo Verde(Sal)SID</option>
+                    <option value="CMN">Casablanca CMN</option>
+                    <option value="DKR">Dakar DKR</option>
+                    <option value="EUN">El Aaiún EUN</option>
+                    <option value="LIS">Lisboa LIS</option>
+                    <option value="FNC">Madeira (Funchal)FNC</option>
+                    <option value="RAK">Marrakech RAK</option>
+                    <option value="NKC">Nuakchot NKC</option>
+                    <option value="PDL">Punta Delgada PDL</option>
+                </optgroup>
+            </select>	
+            <label for="solo_ida">Solo Ida</label>
+            <input type="checkbox" name="ch_ida" id="solo_ida">	
+            <label for="solo_directos">Solo vuelos directos</label>
+            <input type="checkbox" name="ch_directo" id="solo_directos">			
+            <a href="">→ Stopover</a>
+            <input type="date" name="out" id="fecha_salida" placeholder="Ida">
+            <input type="date" name="in" id="fecha_regreso" placeholder="Vuelta">
+            <label for="mejor_precio">Mejor precio en el mes</label>
+            <input type="checkbox" name="ch_precio" id="mejor_precio">									
+            <label for="adulto">Adulto</label>
+            <select name="adulto" id="sel_adulto"> 
+                <option value="1" selected></option> <!--Con el selected dejo predeterminada esta opcion-->
+                <option selected value="-">-</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+            <a href="">→ Viajo con niños</a>
+            <a href="">→ Vuelos en grupo</a>				
+            <input type="checkbox" name="menores_29" id="menores_29"/>
+            <label for="menores_29">Todos menores de 29</label>	
+            <input type="checkbox" name="carne_joven" id="carne_joven"/>
+            <label for="carne_joven">Todos carné Joven</label>
+            <input type="checkbox" name="universitarios" id="universitarios"/>
+            <label for="universitarios">Todos universitarios</label>	
+            <input type="checkbox" name="mayores_60" id="mayores_60"/>
+            <label for="mayores_60">Todos mayores de 60</label>				
+            <input type="checkbox" name="familia_numerosa" id="familia_numerosa"/>
+            <label for="familia_numerosa">Familia numerosa</label>	
+            <button type="" name="bt_buscar" value="Buscar" id="buscar">Buscar</button>		
+        </form>	
+	</body>
+</html>
