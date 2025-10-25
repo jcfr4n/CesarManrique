@@ -6,3 +6,7 @@
 /PRO/Main/
 !/PRO/Main/src/
 *.zip
+CIBERSEGURIDAD/HAJ_HECKING_ETICO/CIBER HAJ UNIDAD 1.pdf
+**/Directorio_no_github/
+.~lock.*#
+
